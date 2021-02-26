@@ -1,5 +1,12 @@
 public abstract class Animal {
-    protected int lenght;
+    int maxRun;
+    int maxSwim;
+
+    public Animal(int maxRun, int maxSwim){
+        this.maxRun=maxRun;
+        this.maxSwim=maxSwim;
+    }
+
 
     abstract void run(int lenght);
 
