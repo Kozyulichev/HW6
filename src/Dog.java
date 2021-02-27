@@ -1,23 +1,26 @@
 public class Dog extends Animal {
 
 
-    public Dog(int maxRun, int maxSwim) {
-        super(maxRun, maxSwim);
+    public Dog(String name, int maxRun, int maxSwim, int swimLenght, int runLenght) {
+        super(name, maxRun, maxSwim, swimLenght, runLenght);
+    }
+
+
+    @Override
+    void run() {
+        if (runLenght <= maxRun && runLenght >= 0) {
+            System.out.println("Песель " + name + " пробежал " + runLenght + " метров");
+        } else if (runLenght < 0) System.out.println("Песики не бегают задом наперед");
+        else System.out.println("Песель " + name + " не может пробежать больше " + maxRun + " метров");
     }
 
     @Override
-    void run(int lenght) {
-        if (lenght <= maxRun && lenght >= 0) {
-            System.out.println("Песель пробежал " + lenght + " метров");
-        } else if (lenght < 0) System.out.println("Песики не бегают задом наперед");
-        else System.out.println("Песель не может пробежать больше "+maxRun+  " метров");
-    }
-
-    @Override
-    void swimm(int lenght) {
-        if (lenght <= maxSwim && lenght > 0) System.out.println("Песик проплыл " + lenght + " метров");
-        else if (lenght < 0) System.out.println("Песики не может грести хвостом");
-        else System.out.println("Песик не может проплыть более "+ maxSwim+ " метров");
+    void swimm() {
+        if (swimLenght <= maxSwim && swimLenght > 0) System.out.println("Песик " + name + " проплыл " + swimLenght +
+                " метров");
+        else if (swimLenght < 0) System.out.println("Песики не могут грести хвостом");
+        else System.out.println("Песик " + name + " не может проплыть более " + maxSwim + " метров");
 
     }
+
 }
